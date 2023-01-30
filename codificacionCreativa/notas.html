@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <canvas width="600" height="600">
+            
+        </canvas>
+        <script>
+            /* Configurar canvas */
+            let canvas = document.querySelector('canvas');
+            let context = canvas.getContext('2d');
+
+            context.fillStyle = 'hotpink'; // Color de relleno
+            context.lineWidth = 4; // Ancho de la linea
+
+            context.fillRect(10,10,400,400); // Rectángulo relleno
+
+            context.beginPath();
+            context.rect(100,100,400,400);
+            context.stroke(); // Sólo la línea
+        
+            context.beginPath();
+            context.arc(400, 400, 60, 0, Math.PI * 2); // Dibuja un circulo
+            context.stroke();
+
+            //context.arc(300, 300, 100, )
+            /* Variables que hacen referencia a una función */
+            let division = (a,b) => {
+                return a/b;
+            }
+            console.log(division(5,2));
+        </script>
+    </body>
+</html>
