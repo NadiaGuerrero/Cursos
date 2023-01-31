@@ -8,6 +8,7 @@
             let canvas = document.querySelector('canvas');
             let context = canvas.getContext('2d');
 
+            /* Dibujar diferentes formas */
             context.fillStyle = 'hotpink'; // Color de relleno
             context.lineWidth = 4; // Ancho de la linea
 
@@ -21,7 +22,24 @@
             context.arc(400, 400, 60, 0, Math.PI * 2); // Dibuja un circulo
             context.stroke();
 
-            //context.arc(300, 300, 100, )
+            const width = 30, height = 30, gap = 100;
+            const rows = 5, columns = 5;
+            let x, y, radius;
+
+            for (let i = 0; i < rows; i++){
+                y = (width + gap)*i+10;
+                for (let j = 0; j < columns; j++){
+                    x = (height + gap)*j+10;
+                    context.beginPath();
+                    // context.rect(x, y, width, height);
+                    // context.arc(x, y, 10, 0, Math.PI*2);
+                    radius = Math.random()*100;
+                    if(Math.random() > 0.5)
+                        context.arc(x, y, radius, 0, Math.PI*2);
+                    context.stroke();
+                }
+            }
+
             /* Variables que hacen referencia a una función */
             let division = (a,b) => {
                 return a/b;
